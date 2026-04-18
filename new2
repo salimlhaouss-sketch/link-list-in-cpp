@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <math.h>
+ int echange (int *x, int *y ) {
+     int d; 
+        d = *x;
+        *x = *y;
+        *y = d;
+    return 0;
+};
+ int main() {
+    int a = 1, b = 2;
+    
+    printf ("%d %d\n", a, b);
+    echange( &a, &b);
+
+    printf("ba3d l3amaliya : a = %d, b = %d\n", a, b);
+    
+    return 0;
+}
+
+
+int x = 10;
+int *p = &x;
+
+//array pointer
+
+int t[] = {1,2,3};
+int *p = t;
+p = &t[0];
+*(p+1) // 2
+
+//function pointer
+
+void f(int *p){
+    *p = 20;
+}
+int x = 5;
+f(&x);
+
+
+//function that return pointer
+
+int* f(){
+    static int x = 10;
+    return &x;
+}
+
+//pointer to pointer
+
+int x = 5;
+int *p = &x;
+int **pp = &p;
+
+//array of pointer
+
+int a = 1, b = 2, c = 3;
+int *t[3] = {&a, &b, &c};
+
+//pointer to array
+
+int t[3] = {1,2,3};
+int (*p)[3] = &t;
+ 
+//dynamic memory allocation
+
+int *p = (int*) malloc(sizeof(int));
+*p = 10;
+free(p);
+
+//string pointer
+
+char *s = "hello";
+char s[] = "hello";
+
+//string pointer vs string array
+
+void f(int *t){
+    printf("%d", t[0]);
+}
+void f(int t[]){
+    printf("%d", t[0]);
+}
+
+//pointer arithmetic
+
+int t[] = {10,20,30};
+int *p = t;
+
+//pointer swap 
+
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}

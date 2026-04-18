@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+
+float sall(float a, float b, float c ,float x ,float r1, float r2 , float r) {
+float daa = a*pow(a, 2)-4*a*c;
+if (daa > 0) {
+    float r1 = (-b + sqrt(daa)) / (2*a);
+    float r2 = (-b - sqrt(daa)) / (2*a);
+    printf("lmo3adala rah fiha 2 holol homa : %f w %f \n",r1 , r2);
+}
+else if (daa == 0 ) {
+    float r = -b / (2*a);
+    printf("lmo3adala rah fiha hol wa7ed homa : %f \n",r);
+}
+else if (daa < 0) { 
+    printf("lmo3adala rah ma fiha hata hol \n");
+}
+
+    return 0;
+} 
+int main() {
+    float a, b, c, x;
+    printf("ktab l3adad a :");
+    scanf("%f", &a);
+    printf("ktab l3adad b :");
+    scanf("%f", &b);
+    printf("ktab l3adad c :");
+    scanf("%f", &c);
+    printf("ktab l3adad x :");
+    scanf("%f", &x);
+    
+
+    printf("%f", sall(a, b, c, x, 0, 0, 0));
+    return 0;
+
+}

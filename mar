@@ -1,0 +1,135 @@
+gcc main.c -o main.exe
+#include <time.h>
+#include <stdbool.h>
+#include <string.h>
+ 
+int main (){
+   void total ( float price , float total ,  float quantety );
+   void chop ( );
+   printf("tankyou for thes goood tchalange");
+    return 0 ;
+}
+
+
+
+
+void chop ( ){
+  time_t wakt ;
+  struct tm *timeinfo = localtime(&wakt);
+  printf("%02d:%02d", timeinfo->tm_hour , timeinfo->tm_min );
+    
+     char sport [100] ={ "nike = 300" , "adidas = 300" , "tike = 300" };
+     char class [100] = { "jaket = 500" , "jaens = 400" , "costum = 1000" };
+     char normal [100] = {  "hooodei = 250" , "pent = 300" , "kaskit = 90" };
+    float price;
+    float total;
+    char choice;     
+    printf("welcom too my choop\n");
+    printf ("choise what do you want\nsport\nclass\nnormal\n");
+    scanf("%c", &choice);
+
+  if (choice == sport){
+    printf("thes is you type ");
+    printf("%s\n", sport);
+  }
+  else if (choice == class){
+    printf("thes is you type ");
+    printf("%s\n", class);
+  }
+  else if (choice == normal){
+    printf("thes is you type ");
+    printf("%s\n", normal);
+  }
+  else {
+    printf("noo valide the styl is not haer");
+  }
+} 
+
+
+
+
+ void total ( float price , float total ,  float quantety ){
+   printf("what doyou want howe many the prodect");
+   char choice[100];
+  scanf("%f", &quantety);
+
+price = quantety * 300;
+
+if ( quantety == 300 ){
+   printf("the price : %f dh " , price);
+}
+else if ( quantety == 600 ){
+   printf("the price :%f dh " , price);
+}   
+else if ( quantety == 900 ){
+    printf("the price : %fdh " , price );
+}
+else { 
+  printf("siir al fakiir");
+}
+}
+#include <stdio.h>
+#include <time.h>
+#include <string.h>
+
+void chop();
+void total ( float price , float total ,  float quantety);
+
+int main (){
+   chop();
+ 
+   printf("tankyou for thes goood tchalange\n");
+    
+   return 0 ;
+}
+
+void chop (){
+
+  time_t wakt ;
+  time(&wakt); 
+  struct tm *timeinfo = localtime(&wakt);
+
+  printf("%02d:%02d\n", timeinfo->tm_hour , timeinfo->tm_min );
+
+  char sport[]  = "nike = 300 , adidas = 300 , puma = 300";
+  char class[]  = "jaket = 500 , jeans = 400 , costum = 1000";
+  char normal[] = "hoodie = 250 , pent = 300 , kaskit = 90";
+
+  char choice[20];
+
+  printf("welcom too my choop\n");
+  printf ("choise what do you wamt\nsport\nclass\nnormal\n");
+  scanf("%s", choice);   
+
+  if (strcmp(choice , "sport") == 0){
+    printf("thes is you type\n");
+    printf("%s\n", sport);
+    total(300 , 0 , 0);
+  }
+  else if (strcmp(choice , "class") == 0){
+    printf("thes is you type\n");
+    printf("%s\n", class);
+    total (500 , 0 , 0 );
+  }
+  else if (strcmp(choice , "normal") == 0){
+    printf("thes is you type\n");
+    printf("%s\n", normal);
+    total(250 , 0 , 0);
+  }
+  else {
+    printf("no valide the styl is not haer\n");
+  }
+}  
+
+
+
+
+void total ( float price , float total ,  float quantety) {
+
+   printf("what do you want how many the prodect ?\n");
+   scanf("%f", &quantety);
+
+   total = quantety * price;
+
+   printf("the price : %.2f dh\n" , total);
+}
